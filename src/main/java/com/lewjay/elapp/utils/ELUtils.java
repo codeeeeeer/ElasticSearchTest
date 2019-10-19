@@ -6,8 +6,7 @@ import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 〈〉
@@ -23,9 +22,7 @@ public class ELUtils {
     }
 
     public static <KT, VT> Map<KT, VT> singletonMap(KT key, VT value){
-        Map<KT, VT> result = new HashMap<>();
-        result.put(key, value);
-        return result;
+        return Collections.singletonMap(key, value);
     }
 
     public static void close(AutoCloseable closeable){
